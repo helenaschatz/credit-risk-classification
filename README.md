@@ -31,3 +31,10 @@ The objective of these steps was to evaluate and compare the performance of two 
 
   * The prescision is 87% and recall is at 89%,  which indicates a high rate of correct identification of high-risk loans with a small number of false positives.
   * The overall accuracy of the model is 0.99, indicating that it correctly predicted the loan risk for 99% of the instances.
+
+
+## Summary
+
+Upon analysis, it was observed that both models exhibited commendable accuracy, precision, and recall scores. However, the logistic regression model that utilized resampling showcased a slightly superior performance, achieving an accuracy score of 0.9945 compared to 0.9924 for the initial logistic regression model.
+
+Considering the objective of accurately identifying both healthy loans and high-risk loans, the logistic regression model with resampling emerges as the optimal choice.
