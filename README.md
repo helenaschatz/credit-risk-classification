@@ -2,14 +2,46 @@
 
 <h2> Overview of the Analysis</h2>
 
-In this Challenge, I have used various techniques to train and evaluate a model based on loan risk.  I have also used a dataset of historical lending activity from a peer-to-peer lending services company, in order to achive a goal of building a model that can identify the creditworthiness of borrowers based on feauters such as loan size, interest rate, borrower income, debt-to-income ration, number of accounts, derogatory marks, and total debt. 
+The purpose of the analysis is to use various techniques to train and evaluate a model based on loan risk. Also, use mashine learning to analyze a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers.
 
-- The loan status was categorized as either a healthy loan (0) or a high-risk loan (1).
-
-- The total number of data points in the dataset was 77,536.
+* The dataset contained features such as loan size, interest rate, borrower income, debt to income ratio, number of account the borrower posseses, a count of derogatory remarks, as well as their total debt while the loan status formed the label.
 
 
-#### Stages of the machine learning process: 
+
+```
+#dataset
+
+df.head()
+
+	loan_size   interest_rate   borrower_income 	debt_to_income  num_of_accounts derogatory_marks    total_debt  loan_status
+
+0	10700.0		7.672		52800		  0.431818		5		1		22800	      0
+
+1	8400.0		6.692		43600		  0.311927		3		0		13600	      0
+
+2	9000.0		6.963		46100		  0.349241		3		0		16100	      0
+
+3	10700.0		7.664		52700		  0.430740		5		1		22700	      0
+
+4	10800.0		7.698		53000		  0.433962		5		1		23000	      0
+```
+
+
+* Using mashine learning, the objective is to predict the status of the loan, either as a Healthy Loan (0) or a High-Risk Loan (1).
+* The Logistic Regression Algorithm is the best tool to use for our machine learning model since it is widely used to predict the probability of a target variable in classification problems.
+
+
+```
+# code
+y.value_counts()
+
+# output
+0    75036
+1     2500
+Name: loan_status, dtype: int64
+```
+
+#### Stages of the machine learning process:
 
 1) Data Split: The dataset was split into training and testing sets to evaluate the model's performance.
 2) Initial Logistic Regression Model: The first logistic regression model was constructed using the original dataset, which consisted of 75,036 data points classified as low risk and 2,500 data points classified as high risk. The objective of this model was to predict the classification (low risk or high risk) of loans given to borrowers in the testing set.
@@ -17,8 +49,6 @@ In this Challenge, I have used various techniques to train and evaluate a model 
 4) Logistic Regression Model with Resampled Data: A logistic regression model was constructed using the resampled data. The objective of this model was to predict loan risk based on the training data that underwent the resampling process.
 
 The objective of these steps was to evaluate and compare the performance of two logistic regression models. The first model was trained on the original data, while the second model was trained on the resampled data. By conducting this comparison, the effectiveness of resampling in addressing class imbalance and enhancing the model's predictive capabilities for loan risk classification could be assessed.
-
-
 
 ## Results
 
@@ -31,7 +61,6 @@ The objective of these steps was to evaluate and compare the performance of two 
 
   * The prescision is 87% and recall is at 89%,  which indicates a high rate of correct identification of high-risk loans with a small number of false positives.
   * The overall accuracy of the model is 0.99, indicating that it correctly predicted the loan risk for 99% of the instances.
-
 
 ## Summary
 
