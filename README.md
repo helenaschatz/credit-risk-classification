@@ -12,7 +12,7 @@ The purpose of the analysis is to use various techniques to train and evaluate a
 # dataset
 df.head()
 
-     loan_size   interest_rate   borrower_income   debt_to_income  num_of_accounts  derogatory_marks  total_debt  loan_status
+     loan_size  interest_rate   borrower_income   debt_to_income  num_of_accounts  derogatory_marks  total_debt  loan_status
 
 0    10700.0	    7.672	     52800	       0.431818		5		 1		22800	      0
 
@@ -42,10 +42,21 @@ Name: loan_status, dtype: int64
 
 #### Stages of the machine learning process:
 
-1) Data Split: The dataset was split into training and testing sets to evaluate the model's performance.
-2) Initial Logistic Regression Model: The first logistic regression model was constructed using the original dataset, which consisted of 75,036 data points classified as low risk and 2,500 data points classified as high risk. The objective of this model was to predict the classification (low risk or high risk) of loans given to borrowers in the testing set.
-3) Resampling with RandomOverSampler: To tackle the issue of class imbalance, the training data underwent resampling using the RandomOverSampler technique. This approach ensured an equal representation of both low-risk and high-risk labels by increasing the number of high-risk data points. As a result, both classes consisted of 56,277 data points each after the resampling process.
-4) Logistic Regression Model with Resampled Data: A logistic regression model was constructed using the resampled data. The objective of this model was to predict loan risk based on the training data that underwent the resampling process.
+1) Data Split:
+
+   - The dataset was split into training and testing sets to evaluate the model's performance.
+2) - The dataset was split into training and testing sets to evaluate the model's performance.
+3) Model Training:
+
+   - Initialize `Logistic Regression Model`. The first logistic regression model was constructed using the original dataset, which consisted of 75,036 data points classified as low risk and 2,500 data points classified as high risk. The objective of this model was to predict the classification (low risk or high risk) of loans given to borrowers in the testing set.
+   - Use the training data to fit the model to the data.
+
+   * During training, the algorithm adjusts the model's weights to minimize the logistic loss between the predicted probabilities and the actual binary labels.
+4) Resampling with `RandomOverSampler`: To tackle the issue of class imbalance, the training data underwent resampling using the RandomOverSampler technique. This approach ensured an equal representation of both low-risk and high-risk labels by increasing the number of high-risk data points. As a result, both classes consisted of 56,277 data points each after the resampling process.
+5) `Logistic Regression Model` with Resampled Data: A logistic regression model was constructed using the resampled data. The objective of this model was to predict loan risk based on the training data that underwent the resampling process.
+6) Model Evaluation:
+
+   * Used the validation set to evaluate the model's performance using appropriate metrics such as accuracy, precision, recall, and F1-score.
 
 The objective of these steps was to evaluate and compare the performance of two logistic regression models. The first model was trained on the original data, while the second model was trained on the resampled data. By conducting this comparison, the effectiveness of resampling in addressing class imbalance and enhancing the model's predictive capabilities for loan risk classification could be assessed.
 
