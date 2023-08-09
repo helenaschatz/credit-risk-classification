@@ -9,21 +9,20 @@ The purpose of the analysis is to use various techniques to train and evaluate a
 
 
 ```
-#dataset
-
+# dataset
 df.head()
 
-	loan_size   interest_rate   borrower_income 	debt_to_income  num_of_accounts derogatory_marks    total_debt  loan_status
+     loan_size   interest_rate   borrower_income   debt_to_income  num_of_accounts  derogatory_marks  total_debt  loan_status
 
-0	10700.0		7.672		52800		  0.431818		5		1		22800	      0
+0    10700.0	    7.672	     52800	       0.431818		5		 1		22800	      0
 
-1	8400.0		6.692		43600		  0.311927		3		0		13600	      0
+1    8400.0	    6.692	     43600	       0.311927		3		 0		13600	      0
 
-2	9000.0		6.963		46100		  0.349241		3		0		16100	      0
+2    9000.0	    6.963	     46100	       0.349241		3		 0		16100	      0
 
-3	10700.0		7.664		52700		  0.430740		5		1		22700	      0
+3    10700.0	    7.664	     52700	       0.430740		5		 1		22700	      0
 
-4	10800.0		7.698		53000		  0.433962		5		1		23000	      0
+4    10800.0	    7.698	     53000	       0.433962		5		 1		23000	      0
 ```
 
 
